@@ -9,7 +9,7 @@ if (isset($_FILES['userFile'])) {
 
 
 
-    if ($_FILES['userFile']['size'] > 1048576) {
+    if ($_FILES['userFile']['size'] > 1048576 || $_FILES['userFile']['size'] == 0) {
         echo "Image size to big. Image size must be 1MB at most.";
     } else if (!in_array($fileType, $extensions)) {
         echo "Uploaded file must be an image (png, jpeg or jpg).";
